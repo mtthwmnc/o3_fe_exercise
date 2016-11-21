@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+    -webkit-transition: font-size 0.3s ease;
+    -moz-transition: font-size 0.3s ease;
+    -o-transition: font-size 0.3s ease;
+    -ms-transition: font-size 0.3s ease;
+}
+
+body {
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    background: #eeeeee;
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: orange;
+}
+
+.page-wrap {
+    width: auto;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    position: relative;
+}
+
+.main-story {
+    margin: 0 0 25px 0;
+    position: relative;
+}
+
+nav#menu {
+    height: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: block;
+}
+
+nav#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+}
+
+nav#menu li {
+    width: 20%;
+    border-left: 1px solid white;
+    white-space: nowrap;
+}
+
+nav#menu li:first-child {
+    border-left: none;
+}
+
+nav#menu a {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background: orange;
+    text-decoration: none;
+    display: block;
+}
+
+nav#menu a:hover {
+    background: gray;
+}
+
+.story-intro {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+header h1 {
+    width: 90%;
+    font-size: 4em;
+}
+
+header h1,
+h2 {
+    margin: 0 0 10px 0;
+}
+
+header #menuBtn {
+    height: 34px;
+    width: 10%;
+    margin-left: auto;
+    padding: auto;
+    background: transparent;
+    border: 0 none;
+    box-shadow: none;
+    text-align: center;
+    display: none;
+}
+
+header #menuBtn:hover {
+    cursor: pointer;
+}
+
+header #menuBtn:hover:focus {outline: 0;}
+
+header #menuBtn span {
+    width: 17px;
+    height: 3px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.75);
+    display: block;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .1s ease-in-out;
+    -moz-transition: .1s ease-in-out;
+    -o-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+header #menuBtn span:nth-child(1) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+header #menuBtn span:nth-child(3) {
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+header #menuBtn.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+header #menuBtn.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+header #menuBtn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.story-intro h2 {
+    font-size: 2.5em;
+}
+
+.story-intro p {
+    margin: 0;
+}
+
+.sub-stories {
+    overflow: hidden;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.sub-story {
+    width: 250px;
+    font-size: 0.8em;
+    text-align: left;
+    position: relative;
+}
+
+.sub-story .media:hover {
+    cursor: pointer;
+}
+
+.sub-story:last-child {
+    padding-right: 0;
+}
+
+.sub-story-intro {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    overflow: hidden;
+}
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 768px) {
+    .desktop {
+        display: block !important;
+    }
+    .mobile {
+        display: none !important;
+    }
+}
+
+
+/* TABLET AND MOBILE */
+
+@media screen and (max-width: 767px) {
+    .mobile {
+        display: block !important;
+    }
+    .desktop {
+        display: none !important;
+    }
+    body {
+        min-width: 320px;
+        margin: 0;
+        padding: 0;
+    }
+    nav#menu a {
+        padding: 5px;
+    }
+    .page-wrap {
+        width: 100%;
+    }
+    .story-intro {
+        position: static;
+    }
+    .sub-stories {
+        flex-direction: column;
+    }
+    .sub-story {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .sub-story {
+        display: flex;
+        flex-direction: row;
+    }
+    .sub-story .media {
+        width: 30%;
+    }
+    .sub-story .sub-story-intro {
+        width: 70%;
+        padding-top: 0;
+        background: transparent;
+        color: rgba(0, 0, 0, 0.75);
+    }
+}
+
+
+/* TABLET  */
+
+@media screen and (max-width: 767px) and (min-width: 481px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .story-intro h2 {
+        font-size: 2em;
+    }
+    .story-intro p {
+        font-size: 1em;
+    }
+    .sub-story .sub-story-intro h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 480px) {
+    nav#menu {
+        height: 0;
+        width: auto;
+        position: absolute;
+        top: 58px;
+        left: 20px;
+        right: 20px;
+        z-index: 999;
+        webkit-transition: height .3s ease;
+        transition: height .3s ease;
+    }
+    nav#menu.collapsed {
+        height: 200px;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+    header #menuBtn {
+        display: block;
+    }
+    nav#menu ul {
+        flex-direction: column;
+    }
+    nav#menu li {
+        width: 100%;
+        border: none;
+    }
+    nav#menu li a {
+        padding: 10px;
+        text-align: left;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .story-intro h2 {
+        font-size: 1.5em;
+    }
+    .sub-story .sub-story-intro h2 {
+        font-size: 1.2em;
+    }
+    .story-intro p {
+        font-size: .8em;
+    }
+    .sub-story .sub-story-intro p {
+        font-size: 1em;
+    }
+}
